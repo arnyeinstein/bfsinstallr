@@ -1,0 +1,9 @@
+Package: bfsinstallr
+Type: Package
+Title: Installs R packages on OFS computer
+Version: 0.0.0.9000
+Authors@R: person("Renger", "van Nieuwkoop", email = "rengerherman.vannieuwkoop@bfs.admin.ch", role = c("aut","cre"))
+Description: The OFS does not allow to install packages from a remote network. However, you can install downloaded packages as long as they are binaries. This package allows you to easily install and update packages on your OFS compuer.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
