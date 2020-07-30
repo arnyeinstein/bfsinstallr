@@ -1,0 +1,13 @@
+
+#' directly install from a remote repository use this function with downloads
+#' the packages and installs them from a local directory.
+
+#' This function checks for updates and installs them from a local directory.
+
+
+
+
+#'
+#' \code{download_packages} downloads packages from preset repositories and
+#'    saves them locally either as source or binary. It creates a directory
+#'    "pkg_source_files".

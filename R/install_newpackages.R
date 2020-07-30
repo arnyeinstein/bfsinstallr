@@ -1,10 +1,16 @@
+#' Install list of packages from local directory
+#'
+#' @param listtoinstall List of packages to install
+#' @param typefiles string either source (zip) or binary (tar.gz)
+#'
+#' @examples
+#' install_newpackages(c("ggplot2", "dplyr"), "source")
 install_newpackages <- function(listtoinstall, typefiles) {
 
-  set_repo_dir()
-
-  installed_pkgs <<- installed.packages()[,1]
-  listtoinstall <- listtoinstall[!listtoinstall %in% installed_pkgs]
-  pkgs_to_download <- get_dependencies(listtoinstall, repositories)
+  startwd <- getwd()
+  pkgs_installed <- utils::installed.packages()[,1]
+  listtoinstall <- listtoinstall[!listtoinstall %in% pkgs_installed]
+  pkgs_to_download <- get_dependencies(listtoinstall)
   download_packages(pkgs_to_download, typefiles)
 
   wkd <- paste(getwd(), "/pkg-source-files", sep = "")
@@ -12,8 +18,8 @@ install_newpackages <- function(listtoinstall, typefiles) {
 
   libs <- list.files() # Get a list of the downloaded packages
   for (p in libs) {
-    install.packages(p, repos = NULL, type = typefiles)
+    utils::install.packages(p, repos = NULL, type = typefiles)
   }
   setwd(startwd) # Return to starting directory
-  rm(installedpackages, repositories)
+  unlink("pkg-source-files", recursive = T)
 }
