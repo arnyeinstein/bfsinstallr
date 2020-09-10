@@ -4,16 +4,13 @@
 \alias{install_newpackages}
 \title{Install list of packages from local directory}
 \usage{
-install_newpackages(listtoinstall, typefiles)
+install_newpackages(listtoinstall, typefiles = "source")
 }
 \arguments{
 \item{listtoinstall}{List of packages to install}
 
-\item{typefiles}{string either source (zip) or binary (tar.gz)}
+\item{typefiles}{string either source (tar.gz) or binary (zip)}
 }
 \description{
 Install list of packages from local directory
-}
-\examples{
-install_newpackages(c("ggplot2", "dplyr"), "source")
 }

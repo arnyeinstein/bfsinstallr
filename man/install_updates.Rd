@@ -4,14 +4,16 @@
 \alias{install_updates}
 \title{Install updates from local repositories}
 \usage{
-install_updates(typefiles)
+install_updates(packlist, typefiles = "source")
 }
 \arguments{
-\item{typefiles}{string either "source" (zip) or "binary" (tar.gz)}
+\item{packlist}{list with packages to be updated}
+
+\item{typefiles}{string either "source" (tar.gz) or "binary" (zip)}
 }
 \description{
 Install updates from local repositories
 }
 \examples{
-install_updates("source")
+# install_updates("ggplot2", "source")
 }

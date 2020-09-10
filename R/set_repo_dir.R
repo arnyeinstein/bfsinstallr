@@ -6,6 +6,7 @@
 
 set_repo_dir <- function () {
   CRAN <- "https://cran.rstudio.com/"
-  BIOC <- "https://bioconductor.org/packages/release/bioc/"
+  BIOC <- "https://stat.ethz.ch/CRAN/"
   c(CRAN, BIOC)
   }
+

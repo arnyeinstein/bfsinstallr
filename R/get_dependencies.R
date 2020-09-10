@@ -28,7 +28,7 @@ get_dependencies <- function(pkgs_to_download) {
         ),
         use.names = FALSE
       )
-    deps <- deps[!(deps %in% pkgs_installed)]
+    # deps <- deps[!(deps %in% pkgs_installed)]
     pkgs_to_download <- append(pkgs_to_download, deps, i)
     i <- i + 1L
   }

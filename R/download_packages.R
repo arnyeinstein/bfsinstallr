@@ -8,10 +8,10 @@
 #'
 #' @examples
 #' download_packages("ggplot2","source")
+
 download_packages <- function(pkgs_to_download, typefiles) {
   # Download the needed packages into the pkg-source-files directory
   if (!is.null(pkgs_to_download)) {
-    unlink("pkg-source-files", recursive = T)
     dir.create("pkg-source-files/", showWarnings = FALSE)
     repositories <- set_repo_dir()
     dwnld_pkgs <-
